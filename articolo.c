@@ -4,33 +4,74 @@
 
 
 int main(int argc, char *argv[]) {
-	char nome_file[argv[1]];
-	char caratteri_riga[31];
 	
+	int x=0;
+	int dimensione;
+	char articolo[5000];
+	char caratteri_riga[100];
+	FILE *file;
+	int lunghezza_articolo;
+
 		if(argc<2) {
-			printf("inserisci il nome del file\n");
+			printf("inserire il nome del file\n");
 			exit(-1);
 		}
 		
 		if(argc<3) {
-			printf("inserisci il numero massimo di caratteri per riga\n");
+			printf("inserire il numero massimo di caratteri per riga\n");
 			exit(-2);
 		}
 		
-	file *fo
-	fo=fopen(nome_file, "r");
+		dimensione=atoi(argv[2])
+		
+		if(dimensione<1) {
+			printf("inserire una lunghezza di caratteri per la riga");
+			exit(-3);
+		}
+
+		file=fopen(argv[1], "r");
 	
-	if(file==NULL)
-    {
-        printf("file %s non trovato\n",argv[1]);
-        exit(-3);
-    }
+		if(file==NULL) {
+        	printf("file %s non trovato\n",argv[1]);
+        	exit(-4);
+   		}
 	
-	while(fgets(caratteri_riga,sizeof(caratteri_riga),file)!=NULL)
-    {
-        printf("%s\n",caratteri_riga);
-        count=++1;
-    }
+		while(fgets(caratteri_riga,sizeof(caratteri_riga),file)!=NULL) {
+        	int scritti;
+			if(caratteri_riga[strlen[caratteri_riga]-1]=='\n') {
+				caratteri_riga[strlen[caratteri_riga]-1]='\0'
+			}
+			
+			scritti=sprintf(pCh,"%s",caratteri_riga);
+			pCh+=scritti;
+    	}
 	
-	
+	pCh=articolo;
+	lunghezza_articolo=strlen[articolo];
+
+	while(pCh<articolo+lunghezza_articolo) {
+		int j=dimensione-1;
+		if(pCh[0]=' ') {
+			pCh++;
+		}
+
+		if(pCh[j+1=' ']) {
+			printf("%.*s\n",dimensione,pCh);
+		}
+
+		else {
+			while(pCh[j]!=' ') {
+				j--;
+			}
+			printf("%.*s\n",dimensione,pCh);
+			pCh+=j;
+		}
+
+		printf(".30s\n",pCh);
+		pCh+=30;
+		x++;
+	}
+
+	fclose(file);
+	return x;
 }
