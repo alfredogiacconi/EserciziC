@@ -1,4 +1,4 @@
-all : cyril ascii
+all : cyril ascii install
 
 cyril : tabella_cyrillic.o converti_api.o
 	gcc -o cyril tabella_cyrillic.o converti_api.o
@@ -14,3 +14,12 @@ tabella_cyrillic.o : tabella_cyrillic.c converti_api.h
     
 converti_api.o : converti_api.c converti_api.h
 	gcc -c -o converti_api.o converti_api.c
+
+elabora : elabora.o
+	gcc -o elabora elabora.o
+	
+elabora : elabora.c
+	gcc -c -o elabora.o elabora.c
+
+install : elabora
+	cp elabora ..
