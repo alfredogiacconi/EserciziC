@@ -9,5 +9,5 @@ int quiz(int x, int y) {
     x = y;
     Y = r;
     }
-return x;
+    return x;
 }
