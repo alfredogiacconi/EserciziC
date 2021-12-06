@@ -7,7 +7,7 @@ int quiz(int x, int y) {
     while (y) {
     r = x % y;
     x = y;
-    Y = r;
+    y = r;
     }
     return x;
 }
