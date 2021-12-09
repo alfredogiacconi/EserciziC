@@ -6,5 +6,5 @@ sub-make:
 quiz : quiz.o 
 	gcc -o quiz -L./math_api -libmath quiz.o
 
-quiz.o : quiz.c 
-	gcc -c -I./math_api -o quiz.o quiz.c
+quiz.o : test_driver.c 
+	gcc -c -I./math_api -o test_driver.o test_driver.c
