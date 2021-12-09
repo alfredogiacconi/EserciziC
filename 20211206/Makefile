@@ -1,10 +1,10 @@
-all: sub-make quiz    
+all: sub-make test_driver    
 
 sub-make: 
 	make -C math_api
     
-quiz : quiz.o 
-	gcc -o quiz -L./math_api -libmath quiz.o
+test_driver : test_driver.o 
+	gcc -o test_driver -L./math_api test_driver.o -lmath
 
-quiz.o : test_driver.c 
+test_driver.o : test_driver.c 
 	gcc -c -I./math_api -o test_driver.o test_driver.c
