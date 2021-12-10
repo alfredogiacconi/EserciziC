@@ -16,8 +16,8 @@ int main(int argc, char *argv[]) {
     b = atoi(argv[1]);
     if (b == 0) {
         printf("Il secondo argomento deve essere un intero\n");
-        exit(-2);
+        exit(-3);
     }
-    printf("quiz(%i, %i) =%i\n" a, b, quiz(a, b));
+    printf("quiz(%i, %i) = %i\n", a, b, quiz(a, b));
     return 0;
 }
