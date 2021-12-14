@@ -1,1 +1,1 @@
-long int fatt(long int n);
+unsigned long int fatt(unsigned long int n);
