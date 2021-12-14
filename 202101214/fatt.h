@@ -1,1 +1,1 @@
-int fatt(int n);
+long int fatt(long int n);
