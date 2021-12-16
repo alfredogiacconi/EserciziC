@@ -16,7 +16,7 @@ class Tweet : Azione {
 		String messaggio;
 	
 	public:
-	Tweet(String s, String m) {super(s); messaggio=m; }	
+	Tweet(String s, String m) : tweet(n) {messaggio=m; }	
 	String dettagli() { return messaggio; }
 }
 
@@ -26,7 +26,7 @@ class Email : Azione {
 		String destinatario;
 	
 	public:
-	Email(String s, String m, String d) {super(s); messaggio=m; destinatario=d; }	
+	Email(String m, String d) {messaggio=m; destinatario=d; }	
 	String dettagli() { 
 		String risultato = messaggio << " " << destinatario;
 		return risultato; }
